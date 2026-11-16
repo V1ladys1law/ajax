@@ -1,11 +1,11 @@
 let btn = document.getElementById("btn");
-let link = document.getElementById("link");
+let btn2 = document.getElementById("btn2");
 
-btn.onclick = function () {
+btn.onclick = btn2.onclick = function () {
   let xhr = new XMLHttpRequest();
-  xhr.open("GET", link.textContent);
+  xhr.open("GET", this.value);
   xhr.onload = function () {
-    console.log(JSON.parse(xhr.responseText));
+    document.write("<p>" + xhr.responseText + "</p>");
   };
   xhr.send();
 };
